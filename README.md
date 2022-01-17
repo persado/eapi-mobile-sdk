@@ -1,6 +1,6 @@
 # eapi-mobile-sdk
-
 Mobilesdk is an api client for persadoAPI for serving and tracking
+
 ## Preview
 
 ## Download
@@ -64,12 +64,12 @@ You must initialize the PSDClient in your module.
     PSDClient.Builder("your app-id").build().initialize()
     // optional values env default PROD for production 
     // qaMode default false true for getting non Live campaigns
-    PSDClient.Builder("your app-id").build().env("environment").qaMode(true).initialize()
+    PSDClient.Builder("your app-id").build().env(Environment.LOCAL).qaMode(true).initialize()
 //asynchronous
     PSDClient.Builder("your app-id").build().initialize{/* callback method here*/ }
     // optional values env default PROD for production 
     // qaMode default false true for getting non Live campaigns
-    PSDClient.Builder("your app-id").build().env("environment").qaMode(true).initialize{/* callback method here*/ }
+    PSDClient.Builder("your app-id").build().env(Environment.LOCAL).qaMode(true).initialize{/* callback method here*/ }
 
 ```
 
@@ -81,7 +81,7 @@ You must initialize the PSDClient in your module.
     PSDClient.Builder(appId: "your app-id").build().initialize()
     // optional values env default PROD for production 
     // qaMode default false true for getting non Live campaigns
-    PSDClient.Builder(appId: "0a2a005b-68a4-1d7a-8168-a54fa71f0009").env(value: "LOCAL").qaMode(value: true).build().initialize()
+    PSDClient.Builder(appId: "0a2a005b-68a4-1d7a-8168-a54fa71f0009")..env(value: .local).qaMode(value: true).build().initialize()
 ```
 
 ### How to use
