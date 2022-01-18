@@ -51,13 +51,25 @@ Add permissions to AndroidManifest.xml
 </manifest>
 ```
 
+### Kotlin Multiplatform Application
 
+```kotlin
+  sourceSets {
+    val commonMain by getting {
+      dependencies {
+        implementation("com.persado.enterprise.apiclient:mobilesdk:0.1")
+      }
+    } 
+  }
+```
+For Kotlin Kotlin Multiplatform Application you can follow the Android guide and write your code in shared project inside 
+the commonMain both for iOS and Android. Make sure you add the correct dependency and the permissions in the manifest for the Android app
 
 ### Initialize
 
 You must initialize the PSDClient in your module.
 
-#### Android
+#### Android - Kotlin Multiplatform
 
 ```kotlin
 //synchronized
@@ -86,7 +98,7 @@ You must initialize the PSDClient in your module.
 
 ### How to use
 
-### Android
+### Android - Kotlin Multiplatform
 #### Serving
 ```kotlin
    fun setPersadoContent(){
