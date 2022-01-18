@@ -87,7 +87,7 @@ You must initialize the PSDClient in your module.
 ### How to use
 
 ### Android
-
+#### Serving
 ```kotlin
    fun setPersadoContent(){
        setContentView(R.layout.activity_main)
@@ -107,14 +107,35 @@ You must initialize the PSDClient in your module.
 
 //asynchronous call the method as a callback in initialization
     PSDClient.Builder("your app-id").build().initialize{setPersadoContent()}
+
+```
+#### Tracking
+```kotlin
+   fun trackPersado(){
+      PSDTrack()
+        .track(TrackAction.CLICK,"external_id")
+      //with env
+      PSDTrack().env(Environment.LOCAL)
+        .track(TrackAction.VIEW,"external_id")
+   }
+//synchronized call the method after initialize method 
+    PSDClient.Builder("your app-id").build().initialize()
+    trackPersado()
+
+//asynchronous call the method as a callback in initialization
+    PSDClient.Builder("your app-id").build().initialize{trackPersado()}
+
 ```
 
+
 ### Ios
-```java
+
+#### Serving
+```kotlin
 
 
 func setPersadoContent() -> Void {
-    let touchpoint : TouchpointVariantResponse? =  PSDContent().getTouchpointContent(campaignId: "324567_qLzxxR0mI0", touchpointName: "banner2")
+    let touchpoint : TouchpointVariantResponse? =  PSDContent().getTouchpointContent(campaignId: "external_id", touchpointName: "name")
     if touchpoint != nil{
         self.content  = (touchpoint?.content)!
     }
@@ -127,6 +148,27 @@ func setPersadoContent() -> Void {
 //asynchronous call the method as a callback in initialization
     PSDClient.Builder(appId: "your app-id").build().initialize{
         self.setPersadoContent()
+    }
+```
+
+#### Tracking
+
+```kotlin
+
+
+func track() -> Void {
+  PSDTrack().track(action: .click, campaignId: "external_id")
+  //with env
+  PSDTrack().env(env: .local).track(action: .view, campaignId: "external_id")
+}
+
+//synchronized call the method after initialize method 
+    PSDClient.Builder(appId: "your app-id").build().initialize()
+    self.track()
+
+//asynchronous call the method as a callback in initialization
+    PSDClient.Builder(appId: "your app-id").build().initialize{
+        self.track()
     }
 ```
 
