@@ -130,7 +130,7 @@ func setPersadoContent() -> Void {
     }
 ```
 
-##Ios manual installation
+## Ios manual installation
 Prerequisites :Xcode
 * Download the valid framework for your case (simulator or release)
 * Frameworks are build for ios devices with version 15
