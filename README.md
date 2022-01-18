@@ -130,7 +130,19 @@ func setPersadoContent() -> Void {
     }
 ```
 
-
+##Ios manual installation
+Prerequisites :Xcode
+* Download the valid framework for your case (simulator or release)
+* Frameworks are build for ios devices with version 15
+* Go to your app "Build Phases" tab and add the framework in "Link Binary with Libraries" section
+![](images/Screenshot 2022-01-18 at 2.24.30 PM.png)
+* Open "Build Settings" and in the "Framework search Paths" add the path where the downloaded framework is located ![](images/Screenshot 2022-01-18 at 2.25.30 PM.png)
+* Open "General" tab in the "Frameworks, Libraries, and Embedded Content select Embed & Sign"
+* Import the framework in the swift class 
+  ```kotlin
+   import mobilesdk
+  ```
+* Follow the instructions in the How to use section
 ## License
 
 ```
