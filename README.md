@@ -29,26 +29,26 @@ Add the dependency to your dependencies
 * groovy
 
 ```groovy
-sourceSets {
-    commonMain {
-        dependencies {
-            // ...
-            implementation "com.persado.enterprise.apiclient:mobilesdk-android:0.1"
-        }
+    dependencies {
+        // ...
+        implementation "com.persado.enterprise.apiclient:mobilesdk-android:0.1"
     }
-}
 ```
 
 * kts
 
 ```kotlin
-sourceSets {
-    val commonMain by getting {
-        dependencies {
-            implementation("com.persado.enterprise.apiclient:mobilesdk-android:0.1")
-        }
+    dependencies {
+        implementation("com.persado.enterprise.apiclient:mobilesdk-android:0.1")
     }
-}
+```
+
+Add permissions to AndroidManifest.xml
+```xml
+<manifest>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+</manifest>
 ```
 
 
@@ -64,12 +64,12 @@ You must initialize the PSDClient in your module.
     PSDClient.Builder("your app-id").build().initialize()
     // optional values env default PROD for production 
     // qaMode default false true for getting non Live campaigns
-    PSDClient.Builder("your app-id").build().env(Environment.LOCAL).qaMode(true).initialize()
+    PSDClient.Builder("your app-id").env(Environment.LOCAL).qaMode(true).build().initialize()
 //asynchronous
     PSDClient.Builder("your app-id").build().initialize{/* callback method here*/ }
     // optional values env default PROD for production 
     // qaMode default false true for getting non Live campaigns
-    PSDClient.Builder("your app-id").build().env(Environment.LOCAL).qaMode(true).initialize{/* callback method here*/ }
+    PSDClient.Builder("your app-id").env(Environment.LOCAL).qaMode(true).build().initialize{/* callback method here*/ }
 
 ```
 
