@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
     spec.license                  = ''
     spec.summary                  = 'Mobilesdk is an api client for persadoAPI for serving and tracking'
 
-    spec.vendored_frameworks      = "xcode-frameworks/Debug/iosSimulatorArm64/mobilesdk.framework"
+    spec.vendored_frameworks      = "frameworks/Release/mobilesdk.framework"
     spec.libraries                = "c++"
     spec.module_name              = "#{spec.name}_umbrella"
 
