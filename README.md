@@ -65,7 +65,42 @@ Add permissions to AndroidManifest.xml
 For Kotlin Kotlin Multiplatform Application you can follow the Android guide and write your code in shared project inside 
 the commonMain both for iOS and Android. Make sure you add the correct dependency and the permissions in the manifest for the Android app
 
-### Initialize
+### Ios
+Prerequisites:
+* Xcode
+* [Cocoapods Manager](https://cocoapods.org/)
+
+In your pod file add the following 
+```java
+target 'your_application' do
+ use_frameworks!
+ platform :ios, '15.2'
+ pod 'mobilesdk', :git => 'https://github.com/persado/eapi-mobile-sdk.git', :tag => 'latest_mobilesdk_version'
+end
+```
+Through terminal go to your_application base path and install the cocoapods with the following command:
+```shell
+pod install
+```
+Or update them if already installed :
+```shell
+pod update
+```
+
+Inside your application add : 
+```java
+import mobilesdk
+```
+Note: In podDegub, podSimulator branches there are pod frameworks builded for debug or simulator usage you can access them with the following changes
+```
+target 'your_application' do
+ use_frameworks!
+ platform :ios, '15.2'
+ pod 'mobilesdk', :git => 'https://github.com/persado/eapi-mobile-sdk.git', :branch => 'podSimulator'
+end
+```
+
+## Initialize
 
 You must initialize the PSDClient in your module.
 
