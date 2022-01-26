@@ -92,7 +92,7 @@ Inside your application add :
 import mobilesdk
 ```
 Note: In podDegub, podSimulator branches there are pod frameworks builded for debug or simulator usage you can access them with the following changes
-```
+```java
 target 'your_application' do
  use_frameworks!
  platform :ios, '15.2'
