@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class MobilesdkEnvironment, MobilesdkPSDClient, MobilesdkPSDClientBuilder, MobilesdkVariantResponse, MobilesdkTouchpointVariantResponse, MobilesdkPSDTrack, MobilesdkTrackAction, MobilesdkKotlinEnumCompanion, MobilesdkKotlinEnum<E>, MobilesdkKotlinArray<T>, MobilesdkPSDResponseCompanion, MobilesdkPSDResponse, MobilesdkTouchpointVariantResponseCompanion, MobilesdkVariantResponseCompanion, MobilesdkKotlinx_serialization_coreSerializersModule, MobilesdkKotlinx_serialization_coreSerialKind, MobilesdkKotlinNothing, MobilesdkKotlinThrowable, MobilesdkKotlinException, MobilesdkKotlinRuntimeException, MobilesdkKotlinIllegalStateException;
+@class MobilesdkEnvironment, MobilesdkPSDClient, MobilesdkPSDClientBuilder, MobilesdkVariantResponse, MobilesdkPSDResponse, MobilesdkTouchpointVariantResponse, MobilesdkPSDTrack, MobilesdkTrackAction, MobilesdkKotlinEnumCompanion, MobilesdkKotlinEnum<E>, MobilesdkKotlinArray<T>, MobilesdkPSDResponseCompanion, MobilesdkTouchpointVariantResponseCompanion, MobilesdkVariantResponseCompanion, MobilesdkKotlinx_serialization_coreSerializersModule, MobilesdkKotlinx_serialization_coreSerialKind, MobilesdkKotlinNothing, MobilesdkKotlinThrowable, MobilesdkKotlinException, MobilesdkKotlinRuntimeException, MobilesdkKotlinIllegalStateException;
 
 @protocol MobilesdkKotlinComparable, MobilesdkKotlinx_serialization_coreKSerializer, MobilesdkKotlinSuspendFunction0, MobilesdkKotlinIterator, MobilesdkKotlinx_serialization_coreEncoder, MobilesdkKotlinx_serialization_coreSerialDescriptor, MobilesdkKotlinx_serialization_coreSerializationStrategy, MobilesdkKotlinx_serialization_coreDecoder, MobilesdkKotlinx_serialization_coreDeserializationStrategy, MobilesdkKotlinFunction, MobilesdkKotlinx_serialization_coreCompositeEncoder, MobilesdkKotlinAnnotation, MobilesdkKotlinx_serialization_coreCompositeDecoder, MobilesdkKotlinx_serialization_coreSerializersModuleCollector, MobilesdkKotlinKClass, MobilesdkKotlinKDeclarationContainer, MobilesdkKotlinKAnnotatedElement, MobilesdkKotlinKClassifier;
 
@@ -176,6 +176,7 @@ __attribute__((swift_name("PSDContent")))
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (MobilesdkVariantResponse * _Nullable)getCampaignContentCampaignId:(NSString *)campaignId __attribute__((swift_name("getCampaignContent(campaignId:)")));
+- (MobilesdkPSDResponse * _Nullable)getPSDResponse __attribute__((swift_name("getPSDResponse()")));
 - (MobilesdkTouchpointVariantResponse * _Nullable)getTouchpointContentCampaignId:(NSString *)campaignId touchpointName:(NSString *)touchpointName __attribute__((swift_name("getTouchpointContent(campaignId:touchpointName:)")));
 @end;
 
