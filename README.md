@@ -2,8 +2,8 @@
 Mobilesdk is an api client for persadoAPI for serving and tracking
 
 # Usage
-1. (Android instructions)[https://github.com/persado/eapi-mobile-sdk/wiki/Android-Instructions]
-2. (iOS instructions)[https://github.com/persado/eapi-mobile-sdk/wiki/iOS-Instructions]
+1. [Android instructions](https://github.com/persado/eapi-mobile-sdk/wiki/Android-Instructions)
+2. [iOS instructions](https://github.com/persado/eapi-mobile-sdk/wiki/iOS-Instructions)
 
 
 # License
