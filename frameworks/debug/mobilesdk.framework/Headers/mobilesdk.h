@@ -425,7 +425,7 @@ __attribute__((swift_name("ErrorMessageUtils.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) MobilesdkErrorMessageUtilsCompanion *shared __attribute__((swift_name("shared")));
-- (NSString *)getErrorMessageCause:(MobilesdkKotlinThrowable *)cause state:(MobilesdkState *)state __attribute__((swift_name("getErrorMessage(cause:state:)")));
+- (NSString *)getErrorMessageCause:(MobilesdkKotlinThrowable *)cause state:(MobilesdkState *)state tracking:(BOOL)tracking __attribute__((swift_name("getErrorMessage(cause:state:tracking:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
