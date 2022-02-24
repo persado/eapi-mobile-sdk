@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'mobilesdk'
-    spec.version                  = '0.1.0-SNAPSHOT'
+    spec.version                  = '0.2.0-SNAPSHOT'
     spec.homepage                 = 'https://github.com/persado/eapi-mobile-sdk'
     spec.source                   = { :git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}" }
     spec.authors                  = 'Maria Makantasi => maria.makantasi@persado.com'
