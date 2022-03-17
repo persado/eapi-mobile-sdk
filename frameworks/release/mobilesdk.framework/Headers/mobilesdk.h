@@ -180,6 +180,7 @@ __attribute__((swift_name("PSDContent")))
 - (MobilesdkPSDResponse * _Nullable)getPSDResponse __attribute__((swift_name("getPSDResponse()")));
 - (MobilesdkTouchpointVariantResponse * _Nullable)getTouchpointContentCampaignId:(NSString *)campaignId touchpointName:(NSString *)touchpointName __attribute__((swift_name("getTouchpointContent(campaignId:touchpointName:)")));
 - (MobilesdkTouchpointVariantResponse * _Nullable)getTouchpointContentByLabelCampaignLabel:(NSString *)campaignLabel touchpointName:(NSString *)touchpointName __attribute__((swift_name("getTouchpointContentByLabel(campaignLabel:touchpointName:)")));
+- (NSDictionary<NSString *, MobilesdkVariantResponse *> * _Nullable)getVariantMapCampaignId:(NSString *)campaignId __attribute__((swift_name("getVariantMap(campaignId:)")));
 - (NSDictionary<NSString *, MobilesdkVariantResponse *> * _Nullable)getVariantMapByLabelCampaignLabel:(NSString *)campaignLabel __attribute__((swift_name("getVariantMapByLabel(campaignLabel:)")));
 @end;
 
