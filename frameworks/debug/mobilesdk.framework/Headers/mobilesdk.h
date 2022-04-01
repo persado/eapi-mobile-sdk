@@ -182,6 +182,7 @@ __attribute__((swift_name("PSDContent")))
 - (MobilesdkTouchpointVariantResponse * _Nullable)getTouchpointContentByLabelCampaignLabel:(NSString *)campaignLabel touchpointName:(NSString *)touchpointName __attribute__((swift_name("getTouchpointContentByLabel(campaignLabel:touchpointName:)")));
 - (NSDictionary<NSString *, MobilesdkVariantResponse *> * _Nullable)getVariantMapCampaignId:(NSString *)campaignId __attribute__((swift_name("getVariantMap(campaignId:)")));
 - (NSDictionary<NSString *, MobilesdkVariantResponse *> * _Nullable)getVariantMapByLabelCampaignLabel:(NSString *)campaignLabel __attribute__((swift_name("getVariantMapByLabel(campaignLabel:)")));
+- (BOOL)isQaMode __attribute__((swift_name("isQaMode()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
