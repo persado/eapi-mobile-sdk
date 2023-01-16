@@ -22,4 +22,9 @@ Pod::Spec.new do |spec|
         ss.ios.deployment_target = '16.1'
         ss.vendored_frameworks = 'frameworks/release/mobilesdk.framework'
     end
+
+    spec.subspec 'ReleaseSimulator' do |ss|
+        ss.ios.deployment_target = '16.1'
+        ss.vendored_frameworks = 'frameworks/release/simulator/mobilesdk.framework'
+    end
 end
