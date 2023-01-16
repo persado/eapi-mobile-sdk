@@ -156,7 +156,7 @@ __attribute__((swift_name("Expectation")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PSDClient")))
 @interface MobilesdkPSDClient : MobilesdkBase
-- (instancetype)initWithAppId:(NSString *)appId qaMode:(BOOL)qaMode env:(MobilesdkEnvironment *)env __attribute__((swift_name("init(appId:qaMode:env:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithAppId:(NSString *)appId qaMode:(BOOL)qaMode env:(MobilesdkEnvironment *)env userAttributes:(NSDictionary<NSString *, NSString *> *)userAttributes __attribute__((swift_name("init(appId:qaMode:env:userAttributes:)"))) __attribute__((objc_designated_initializer));
 - (void)initializeCallback:(void (^)(MobilesdkBoolean *, NSString * _Nullable))callback __attribute__((swift_name("initialize(callback:)")));
 @end;
 
@@ -167,6 +167,7 @@ __attribute__((swift_name("PSDClient.Builder")))
 - (MobilesdkPSDClient *)build __attribute__((swift_name("build()")));
 - (MobilesdkPSDClientBuilder *)envValue:(MobilesdkEnvironment *)value __attribute__((swift_name("env(value:)")));
 - (MobilesdkPSDClientBuilder *)qaModeValue:(BOOL)value __attribute__((swift_name("qaMode(value:)")));
+- (MobilesdkPSDClientBuilder *)userAttributesValue:(NSDictionary<NSString *, NSString *> *)value __attribute__((swift_name("userAttributes(value:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -376,9 +377,11 @@ __attribute__((swift_name("TrackAction")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("VariantResponse")))
 @interface MobilesdkVariantResponse : MobilesdkBase
-- (instancetype)initWithVariantCode:(NSString * _Nullable)variantCode genoId:(NSString * _Nullable)genoId languageSegment:(NSString * _Nullable)languageSegment touchpoints:(NSArray<id> * _Nullable)touchpoints params:(NSDictionary<id, id> * _Nullable)params defaultParams:(NSDictionary<id, id> * _Nullable)defaultParams campaignLabel:(NSString * _Nullable)campaignLabel psdTracking:(BOOL)psdTracking __attribute__((swift_name("init(variantCode:genoId:languageSegment:touchpoints:params:defaultParams:campaignLabel:psdTracking:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithVariantCode:(NSString * _Nullable)variantCode genoId:(NSString * _Nullable)genoId languageSegment:(NSString * _Nullable)languageSegment touchpoints:(NSArray<id> * _Nullable)touchpoints params:(NSDictionary<id, id> * _Nullable)params defaultParams:(NSDictionary<id, id> * _Nullable)defaultParams campaignLabel:(NSString * _Nullable)campaignLabel psdTracking:(BOOL)psdTracking serving:(BOOL)serving useCaseCampaign:(NSString * _Nullable)useCaseCampaign message:(NSString * _Nullable)message __attribute__((swift_name("init(variantCode:genoId:languageSegment:touchpoints:params:defaultParams:campaignLabel:psdTracking:serving:useCaseCampaign:message:)"))) __attribute__((objc_designated_initializer));
 @property (class, readonly, getter=companion) MobilesdkVariantResponseCompanion *companion __attribute__((swift_name("companion")));
 - (NSString * _Nullable)component1 __attribute__((swift_name("component1()")));
+- (NSString * _Nullable)component10 __attribute__((swift_name("component10()")));
+- (NSString * _Nullable)component11 __attribute__((swift_name("component11()")));
 - (NSString * _Nullable)component2 __attribute__((swift_name("component2()")));
 - (NSString * _Nullable)component3 __attribute__((swift_name("component3()")));
 - (NSArray<id> * _Nullable)component4 __attribute__((swift_name("component4()")));
@@ -386,7 +389,8 @@ __attribute__((swift_name("VariantResponse")))
 - (NSDictionary<id, id> * _Nullable)component6 __attribute__((swift_name("component6()")));
 - (NSString * _Nullable)component7 __attribute__((swift_name("component7()")));
 - (BOOL)component8 __attribute__((swift_name("component8()")));
-- (MobilesdkVariantResponse *)doCopyVariantCode:(NSString * _Nullable)variantCode genoId:(NSString * _Nullable)genoId languageSegment:(NSString * _Nullable)languageSegment touchpoints:(NSArray<id> * _Nullable)touchpoints params:(NSDictionary<id, id> * _Nullable)params defaultParams:(NSDictionary<id, id> * _Nullable)defaultParams campaignLabel:(NSString * _Nullable)campaignLabel psdTracking:(BOOL)psdTracking __attribute__((swift_name("doCopy(variantCode:genoId:languageSegment:touchpoints:params:defaultParams:campaignLabel:psdTracking:)")));
+- (BOOL)component9 __attribute__((swift_name("component9()")));
+- (MobilesdkVariantResponse *)doCopyVariantCode:(NSString * _Nullable)variantCode genoId:(NSString * _Nullable)genoId languageSegment:(NSString * _Nullable)languageSegment touchpoints:(NSArray<id> * _Nullable)touchpoints params:(NSDictionary<id, id> * _Nullable)params defaultParams:(NSDictionary<id, id> * _Nullable)defaultParams campaignLabel:(NSString * _Nullable)campaignLabel psdTracking:(BOOL)psdTracking serving:(BOOL)serving useCaseCampaign:(NSString * _Nullable)useCaseCampaign message:(NSString * _Nullable)message __attribute__((swift_name("doCopy(variantCode:genoId:languageSegment:touchpoints:params:defaultParams:campaignLabel:psdTracking:serving:useCaseCampaign:message:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -394,9 +398,12 @@ __attribute__((swift_name("VariantResponse")))
 @property (readonly) NSDictionary<id, id> * _Nullable defaultParams __attribute__((swift_name("defaultParams")));
 @property (readonly) NSString * _Nullable genoId __attribute__((swift_name("genoId")));
 @property (readonly) NSString * _Nullable languageSegment __attribute__((swift_name("languageSegment")));
+@property (readonly) NSString * _Nullable message __attribute__((swift_name("message")));
 @property (readonly) NSDictionary<id, id> * _Nullable params __attribute__((swift_name("params")));
 @property (readonly) BOOL psdTracking __attribute__((swift_name("psdTracking")));
+@property (readonly) BOOL serving __attribute__((swift_name("serving")));
 @property (readonly) NSArray<id> * _Nullable touchpoints __attribute__((swift_name("touchpoints")));
+@property (readonly) NSString * _Nullable useCaseCampaign __attribute__((swift_name("useCaseCampaign")));
 @property (readonly) NSString * _Nullable variantCode __attribute__((swift_name("variantCode")));
 @end;
 
