@@ -196,6 +196,7 @@ __attribute__((swift_name("PSDTrack")))
 - (void)trackAction:(MobilesdkTrackAction *)action campaignId:(NSString *)campaignId callback:(void (^)(MobilesdkBoolean *, NSString * _Nullable))callback __attribute__((swift_name("track(action:campaignId:callback:)")));
 - (void)trackByCampaignLabelAction:(MobilesdkTrackAction *)action campaignLabel:(NSString *)campaignLabel __attribute__((swift_name("trackByCampaignLabel(action:campaignLabel:)")));
 - (void)trackByCampaignLabelAction:(MobilesdkTrackAction *)action campaignLabel:(NSString *)campaignLabel callback:(void (^)(MobilesdkBoolean *, NSString * _Nullable))callback __attribute__((swift_name("trackByCampaignLabel(action:campaignLabel:callback:)")));
+- (MobilesdkPSDTrack *)userAttributesValue:(NSDictionary<NSString *, NSString *> *)value __attribute__((swift_name("userAttributes(value:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
